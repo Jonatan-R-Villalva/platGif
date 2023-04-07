@@ -3,7 +3,7 @@
 }
 
 .App-content {
-  background-color: #282c34;
+  background-color: #62656a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,4 +11,5 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 16px;
 }

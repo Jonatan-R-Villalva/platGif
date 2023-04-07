@@ -1,22 +1,17 @@
-import React , { useState , useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css';
-import getGifs from './sevices/getGifs';
+import ListOfGifs from './components/ListOfGifs';
+import { Link, Route } from 'wouter';
 
 function App() {
-  const [gifs , setGifs ] = useState([]);
-
-  useEffect(()=>{
-    getGifs({keyWord : 'hinata'}).then(gifs => setGifs(gifs))
-  },[])
+  const [ keyword, setKeyword ] = useState('');
   return (
     <div className="App">
       <section className="App-content">
-        {
-          gifs.map((e) =>
-            <img src={e} alt='img-not-found'/>
-          )
-        }
-        {/* <button onClick={()=> setGifs(DIFERENTGIFS)}>cambiar</button> */}
+        <Link to='/gif/pandas'>git</Link>
+        {/* <button onClick={()=> setKeyword('mapa')}>cambiar</button> */}
+        <Route component={ListOfGifs} path="/gif/:keyword"/>
+        <ListOfGifs keyword={keyword} />
       </section>
     </div>
   );
